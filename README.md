@@ -221,12 +221,12 @@ Test: [ 0/71]   Time  1.225 ( 1.225)    Acc@1   2.34 (  2.34)   Acc@5  42.97 ( 4
 
 ## Some Additional Notes
 
-The primary objective of the activation preservation term in EFRAP is to compensate for benign accuracy after error-guided flipped rounding. Except for the activation MSE loss by Nagel et al., other many alternative losses can be chosen for this purpose, e.g., FlexRound (Lee et al.), FIM-based Minimization (Li et al.), Prediction Difference Metric (Liu et al.), or any other losses that can improve post-training quantization and is compatible for the 0-1 interger programming optimization. We have experimentally observed that these losses, although originally designed for mitigating accuracy loss during quantization, can eliminate the quantization-conditioned backdoors in some cases (but we did not do an comprehensive experiments to verify this). It would be interesting to further discover these machanisms in future works.
+The primary objective of the activation preservation term in EFRAP is to compensate for benign accuracy after error-guided flipped rounding. Except for the activation MSE loss by Nagel et al., many other alternative losses can be chosen for this purpose, e.g., FlexRound [1], FIM-based Minimization [2], Prediction Difference Metric [3], or any other losses that can improve post-training quantization and is compatible for the 0-1 interger programming optimization. We have experimentally observed that these losses, although originally designed for mitigating accuracy loss during quantization, can mitigate the quantization-conditioned backdoors in some cases (but we did not do comprehensive experiments to verify this). It would be interesting to further discover these machanisms in future works.
 
-References:
-
-Lee J H, Kim J, Kwon S J, et al. Flexround: Learnable rounding based on element-wise division for post-training quantization[C]//International Conference on Machine Learning. PMLR, 2023: 18913-18939.
-
-Li Y, Gong R, Tan X, et al. BRECQ: Pushing the Limit of Post-Training Quantization by Block Reconstruction[C]//International Conference on Learning Representations. 2020.
-
-Liu J, Niu L, Yuan Z, et al. Pd-quant: Post-training quantization based on prediction difference metric[C]//Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2023: 24427-24437.
+> References:
+>
+> [1]: Lee J H, Kim J, Kwon S J, et al. Flexround: Learnable rounding based on element-wise division for post-training quantization[C]//International Conference on Machine Learning. PMLR, 2023: 18913-18939.
+>
+> [2]: Li Y, Gong R, Tan X, et al. BRECQ: Pushing the Limit of Post-Training Quantization by Block Reconstruction[C]//International Conference on Learning Representations. 2020.
+>
+> [3]: Liu J, Niu L, Yuan Z, et al. Pd-quant: Post-training quantization based on prediction difference metric[C]//Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2023: 24427-24437.
